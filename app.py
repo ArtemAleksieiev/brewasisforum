@@ -37,25 +37,25 @@ HTML_WRAP = '''\
 '''
 
 # HTML template for an individual comment
-POST = '''\
-    <div class=post><em class=date>%s</em><br>%s</div>
-'''
+#POST = '''\
+#    <div class=post><em class=date>%s</em><br>%s</div>
+#'''
 
 
 @app.route('/', methods=['GET'])
 def main():
   '''Main page of the forum.'''
-  posts = "".join(POST % (date, text) for text, date in get_posts())
-  html = HTML_WRAP % posts
+ # posts = "".join(POST % (date, text) for text, date in get_posts())
+  html = HTML_WRAP
   return html
 
 
-@app.route('/', methods=['POST'])
-def post():
-  '''New post submission.'''
-  message = request.form['content']
-  add_post(message)
-  return redirect(url_for('main'))
+#@app.route('/', methods=['POST'])
+#def post():
+#  '''New post submission.'''
+#  message = request.form['content']
+#  add_post(message)
+#  return redirect(url_for('main'))
 
 
 if __name__ == '__main__':
