@@ -51,12 +51,12 @@ def main():
   return html
 
 
-@app.route('/', methods=['POST'])
-def post():
-  '''New post submission.'''
-  message = request.form['content']
-  add_post(message)
-  return redirect(url_for('main'))
+#@app.route('/', methods=['POST'])
+#def post():
+#  '''New post submission.'''
+#  message = request.form['content']
+#  add_post(message)
+#  return redirect(url_for('main'))
 
 
 if __name__ == '__main__':
