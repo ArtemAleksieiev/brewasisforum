@@ -43,12 +43,12 @@ POST = '''\
 '''
 
 
-@app.route('/', methods=['GET'])
-def main():
-  '''Main page of the forum.'''
-  posts = "".join(POST % (name) for name in get_posts())
-  html = HTML_WRAP % posts
-  return html
+#@app.route('/', methods=['GET'])
+#def main():
+#  '''Main page of the forum.'''
+#  posts = "".join(POST % (name) for name in get_posts())
+#  html = HTML_WRAP % posts
+#  return html
 
 
 #@app.route('/', methods=['POST'])
