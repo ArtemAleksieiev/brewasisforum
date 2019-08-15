@@ -3,22 +3,22 @@
 import datetime
 import psycopg2
 
-DBNAME = "forum"
+DBNAME = "brewasis"
 
 def get_posts():
   """Return all posts from the 'database', most recent first."""
   db = psycopg2.connect(database=DBNAME)
   c = db.cursor()
-  c.execute("select content, time from posts order by time desc")
+  c.execute("select name from products order by id desc")
   return c.fetchall()
   db.close()
 
 
 
-def add_post(content):
-  """Add a post to the 'database' with the current timestamp."""
-  db = psycopg2.connect(database=DBNAME)
-  c = db.cursor()
-  c.execute("insert into posts values (%s)", (content,))
-  db.commit()
-  db.close()
+#def add_post(content):
+#  """Add a post to the 'database' with the current timestamp."""
+#  db = psycopg2.connect(database=DBNAME)
+#  c = db.cursor()
+#  c.execute("insert into posts values (%s)", (content,))
+#  db.commit()
+#  db.close()

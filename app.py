@@ -4,7 +4,8 @@
 
 from flask import Flask, request, redirect, url_for
 
-from forumdb import get_posts, add_post
+from forumdb import get_posts
+#, add_post
 
 app = Flask(__name__)
 
@@ -37,25 +38,25 @@ HTML_WRAP = '''\
 '''
 
 # HTML template for an individual comment
-#POST = '''\
-#    <div class=post><em class=date>%s</em><br>%s</div>
-#'''
+POST = '''\
+    <div class=post><br>%s</div>
+'''
 
 
 @app.route('/', methods=['GET'])
 def main():
   '''Main page of the forum.'''
- # posts = "".join(POST % (date, text) for text, date in get_posts())
-  html = HTML_WRAP
+  posts = "".join(POST % (name) for name in get_posts())
+  html = HTML_WRAP % posts
   return html
 
 
-#@app.route('/', methods=['POST'])
-#def post():
-#  '''New post submission.'''
-#  message = request.form['content']
-#  add_post(message)
-#  return redirect(url_for('main'))
+@app.route('/', methods=['POST'])
+def post():
+  '''New post submission.'''
+  message = request.form['content']
+  add_post(message)
+  return redirect(url_for('main'))
 
 
 if __name__ == '__main__':
