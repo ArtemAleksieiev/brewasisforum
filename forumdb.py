@@ -1,13 +1,15 @@
 # "Database code" for the DB Forum.
 
 import datetime
+import os
 import psycopg2
 
-DBNAME = "brewasis"
+
+DATABASE_URL = os.environ['DATABASE_URL']
 
 def get_posts():
   """Return all posts from the 'database', most recent first."""
-  db = psycopg2.connect(database=DBNAME)
+  db = psycopg2.connect(DATABASE_URL)
   c = db.cursor()
   c.execute("select name from products order by id desc")
   return c.fetchall()
