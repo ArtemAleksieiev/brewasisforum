@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BREWASIS</title>
+    <style>
+      h1,h3, form { text-align: center; }
+      textarea { width: 150px; height: 30px; }
+      div.post { border: 1px solid #999;
+                 padding: 10px 10px;
+                 margin: 10px 20%%; }
+      hr.postbound { width: 50%%; }
+      td, th {border: 1px solid #ddd; padding: 8px;}
+      th {padding-top: 12px; padding-bottom: 12px;text-align: left; background-color: #4CAF50; color: white;}
+      tr:nth-child(even){background-color: #f2f2f2;}
+      tr:hover {background-color: #ddd;}
+      #data {margin-left: auto;margin-right: auto; margin-top:80px; width: 600px; }
+      #table {border-collapse: collapse; width: 600px;}
+    </style>
+  </head>
+  <body>
+    <h1>BREWASIS</h1>
+    <h3> Products table</h3>
+    <form method=post>
+      <div>
+        <textarea id="id" name="id" placeholder="ID"></textarea>
+        <textarea id="price" name="price" placeholder="$"></textarea>
+        <textarea id="product_name" name="product_name" placeholder="NAME"></textarea>
+      </div>
+      <div><button id="go" type="submit">Create data</button></div>
+    </form>
+    <!-- post content will go here -->
+    <div id="data">
+    <table id="table" style="background-color: #f2f2f2;"> <tr> <td style = "width:100px">ID</td> <td style="width:200px">PRICE</td> <td>NAME</td> </tr> </table>
+ {{product_data | safe}}
+    </div>
+  </body>
+</html>

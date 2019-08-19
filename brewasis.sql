@@ -62,6 +62,10 @@ CREATE TABLE public.sales (
 COPY public.products (id, price, name) FROM stdin;
 1	2.990000	Beer
 2	1.990000	King Beer
+120	3.990000	Gold Beer
+121	4.550000	Queens Beer
+45	6.990000	Best Beer
+22	2.190000	Cold Beer
 \.
 
 
@@ -70,6 +74,17 @@ COPY public.products (id, price, name) FROM stdin;
 --
 
 COPY public.sales (id, sale_date, count) FROM stdin;
+45	2019-01-01	5
+45	2019-01-09	4
+1	2019-02-06	10
+45	2019-03-20	6
+22	2019-04-09	22
+120	2019-05-09	12
+45	2019-05-11	8
+121	2019-06-22	18
+1	2019-07-05	12
+121	2019-07-12	17
+45	2019-06-06	2
 \.
 
 
