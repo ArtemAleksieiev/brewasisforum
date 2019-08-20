@@ -4,15 +4,17 @@ Python Postgresql database
 This project uses Postgres database and allow users add items in two tables: products and sales. 
 Then the result graphically shows the change in sales by month. Database contain two tables:
 * Products
+
     Include these columns:
-      - id(primary key)
-      - price
-      - name
+        - id(primary key)
+        - price
+        - name
 * Sales 
-     Include these columns:
-     - id
-     - date
-     - count
+
+    Include these columns:
+        - id
+        - date
+        - count
      
      
 
