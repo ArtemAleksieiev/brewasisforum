@@ -6,15 +6,15 @@ Then the result graphically shows the change in sales by month. Database contain
 * Products
 
     Include these columns:
-        - id(primary key)
-        - price
-        - name
+     - id(primary key)
+     - price
+     - name
 * Sales 
 
     Include these columns:
-        - id
-        - date
-        - count
+     - id
+     - date
+     - count
      
      
 
