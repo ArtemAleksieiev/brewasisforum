@@ -4,7 +4,7 @@ import os
 import psycopg2
 
 
-DATABASE_URL = os.environ['DATABASE_URL']
+DATABASE_URL = "brewasis"
 
 def get_data(query):
   """Return data from the database."""
